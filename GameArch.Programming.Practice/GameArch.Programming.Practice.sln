@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PP01.HelloSDL", "PP01.HelloSDL\PP01.HelloSDL.vcxproj", "{5A7C93FC-E922-4C15-B2BF-AD583C6130AB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PP02.BreakUpHelloSDL", "PP02.BreakUpHelloSDL\PP02.BreakUpHelloSDL.vcxproj", "{8E395DA9-18B3-47BC-B9D3-2924719909E7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PP03.GameClass", "PP03.GameClass\PP03.GameClass.vcxproj", "{5E5A3062-1104-492F-AE7D-C3236CAAB538}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -13,6 +17,14 @@ Global
 		{5A7C93FC-E922-4C15-B2BF-AD583C6130AB}.Debug|Win32.Build.0 = Debug|Win32
 		{5A7C93FC-E922-4C15-B2BF-AD583C6130AB}.Release|Win32.ActiveCfg = Release|Win32
 		{5A7C93FC-E922-4C15-B2BF-AD583C6130AB}.Release|Win32.Build.0 = Release|Win32
+		{8E395DA9-18B3-47BC-B9D3-2924719909E7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8E395DA9-18B3-47BC-B9D3-2924719909E7}.Debug|Win32.Build.0 = Debug|Win32
+		{8E395DA9-18B3-47BC-B9D3-2924719909E7}.Release|Win32.ActiveCfg = Release|Win32
+		{8E395DA9-18B3-47BC-B9D3-2924719909E7}.Release|Win32.Build.0 = Release|Win32
+		{5E5A3062-1104-492F-AE7D-C3236CAAB538}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5E5A3062-1104-492F-AE7D-C3236CAAB538}.Debug|Win32.Build.0 = Debug|Win32
+		{5E5A3062-1104-492F-AE7D-C3236CAAB538}.Release|Win32.ActiveCfg = Release|Win32
+		{5E5A3062-1104-492F-AE7D-C3236CAAB538}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
