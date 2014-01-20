@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PP02.BreakUpHelloSDL", "PP0
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PP03.GameClass", "PP03.GameClass\PP03.GameClass.vcxproj", "{5E5A3062-1104-492F-AE7D-C3236CAAB538}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PP04.BasicDrawing", "PP04.BasicDrawing\PP04.BasicDrawing.vcxproj", "{259E81B0-13DA-43BF-AA13-B395508230EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -25,6 +27,10 @@ Global
 		{5E5A3062-1104-492F-AE7D-C3236CAAB538}.Debug|Win32.Build.0 = Debug|Win32
 		{5E5A3062-1104-492F-AE7D-C3236CAAB538}.Release|Win32.ActiveCfg = Release|Win32
 		{5E5A3062-1104-492F-AE7D-C3236CAAB538}.Release|Win32.Build.0 = Release|Win32
+		{259E81B0-13DA-43BF-AA13-B395508230EF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{259E81B0-13DA-43BF-AA13-B395508230EF}.Debug|Win32.Build.0 = Debug|Win32
+		{259E81B0-13DA-43BF-AA13-B395508230EF}.Release|Win32.ActiveCfg = Release|Win32
+		{259E81B0-13DA-43BF-AA13-B395508230EF}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
