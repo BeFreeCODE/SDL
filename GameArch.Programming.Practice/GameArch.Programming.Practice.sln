@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PP04.BasicDrawing", "PP04.B
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PP05.AnimatingSprite", "PP05.AnimatingSprite\PP05.AnimatingSprite.vcxproj", "{629C98A5-002B-4FFA-8D2B-312E3BF2BFC8}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PP08.SingletonTM", "PP08.SingletonTM\PP08.SingletonTM.vcxproj", "{59A8819E-F1AB-4583-8DDB-6E88EB19A45C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -37,6 +39,10 @@ Global
 		{629C98A5-002B-4FFA-8D2B-312E3BF2BFC8}.Debug|Win32.Build.0 = Debug|Win32
 		{629C98A5-002B-4FFA-8D2B-312E3BF2BFC8}.Release|Win32.ActiveCfg = Release|Win32
 		{629C98A5-002B-4FFA-8D2B-312E3BF2BFC8}.Release|Win32.Build.0 = Release|Win32
+		{59A8819E-F1AB-4583-8DDB-6E88EB19A45C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{59A8819E-F1AB-4583-8DDB-6E88EB19A45C}.Debug|Win32.Build.0 = Debug|Win32
+		{59A8819E-F1AB-4583-8DDB-6E88EB19A45C}.Release|Win32.ActiveCfg = Release|Win32
+		{59A8819E-F1AB-4583-8DDB-6E88EB19A45C}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
