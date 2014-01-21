@@ -1,5 +1,5 @@
-﻿빌드 시작: 2014-01-21 오후 4:58:55
-     1>2 노드의 "C:\Users\532-1\SDL\GameArch.Programming.Practice\PP04.BasicDrawing\PP04.BasicDrawing.vcxproj" 프로젝트(build 대상)입니다.
+﻿빌드 시작: 2014-01-21 오후 5:09:33
+     1>3 노드의 "C:\Users\532-1\SDL\GameArch.Programming.Practice\PP04.BasicDrawing\PP04.BasicDrawing.vcxproj" 프로젝트(build 대상)입니다.
      1>InitializeBuildStatus:
          "AlwaysCreate"이(가) 지정되었기 때문에 "Debug\PP04.BasicDrawing.unsuccessfulbuild"을(를) 만들고 있습니다.
        ClCompile:
@@ -14,4 +14,4 @@
 
 빌드했습니다.
 
-경과 시간: 00:00:00.23
+경과 시간: 00:00:00.13
