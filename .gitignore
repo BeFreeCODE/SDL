@@ -1,4 +1,6 @@
 *.sdf
+*.suo
+*.v11.suo
 *.opensdf
 *.tlog
 *.idb
@@ -6,4 +8,12 @@
 *.obj
 *.exe
 *.ilk
+*.log
 /ipch
+*.ipch 
+*.intermediate.manifest
+*.unsuccessfulbuild
+*.lastbuildstate
+*.vcxprojResolveAssemblyReference.cache
+
+GameArch.Programming.Practice/ipch/pp11.abstractclass-f9d07f08/pp11.ipch
