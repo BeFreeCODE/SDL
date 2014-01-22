@@ -1,0 +1,26 @@
+﻿빌드 시작: 2014-01-22 오전 11:24:01
+     1>2 노드의 "C:\Users\532-1\SDL\GameArch.Programming.Practice\PP09.Inheritance\PP09.Inheritance.vcxproj" 프로젝트(build 대상)입니다.
+     1>InitializeBuildStatus:
+         "AlwaysCreate"이(가) 지정되었기 때문에 "Debug\PP09.Inheritance.unsuccessfulbuild"을(를) 만들고 있습니다.
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt GameObject.cpp
+         GameObject.cpp
+       Link:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\532-1\SDL\GameArch.Programming.Practice\Debug\PP09.Inheritance.exe" /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\PP09.Inheritance.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\532-1\SDL\GameArch.Programming.Practice\Debug\PP09.Inheritance.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\532-1\SDL\GameArch.Programming.Practice\Debug\PP09.Inheritance.lib" /MACHINE:X86 Debug\Game.obj
+         Debug\GameObject.obj
+         Debug\main.obj
+         Debug\Player.obj
+         Debug\TextureManager.obj
+         LINK : C:\Users\532-1\SDL\GameArch.Programming.Practice\Debug\PP09.Inheritance.exe을(를) 찾을 수 없거나 마지막 증분 링크에 의해 빌드되지 않았습니다. 전체 링크를 수행하고 있습니다.
+     1>MSVCRTD.lib(cinitexe.obj) : warning LNK4098: 'msvcrt.lib' defaultlib가 다른 라이브러리와 충돌합니다. /NODEFAULTLIB:library를 사용하십시오.
+         PP09.Inheritance.vcxproj -> C:\Users\532-1\SDL\GameArch.Programming.Practice\Debug\PP09.Inheritance.exe
+       Manifest:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\532-1\SDL\GameArch.Programming.Practice\Debug\PP09.Inheritance.exe;#1" /manifest Debug\PP09.Inheritance.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         "Debug\PP09.Inheritance.unsuccessfulbuild" 파일을 삭제하고 있습니다.
+         "Debug\PP09.Inheritance.lastbuildstate"에 연결(touching)하고 있습니다.
+     1>"C:\Users\532-1\SDL\GameArch.Programming.Practice\PP09.Inheritance\PP09.Inheritance.vcxproj" 프로젝트를 빌드했습니다(build 대상).
+
+빌드했습니다.
+
+경과 시간: 00:00:02.49
