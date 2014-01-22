@@ -3,6 +3,7 @@
 #include "TextureManager.h"
 
 Game* Game::m_pGame = 0;
+
 bool Game::init(const char* title, int xpos, int ypos, 
 	int width, int height, bool fullscreen)
 {
@@ -10,7 +11,7 @@ bool Game::init(const char* title, int xpos, int ypos,
 	if(SDL_Init(SDL_INIT_EVERYTHING) >= 0)
 	{
 		m_pWindow = SDL_CreateWindow(title,xpos,ypos,width,height,fullscreen);
-		
+
 		if(m_pWindow != nullptr)
 		{
 			m_pRenderer = SDL_CreateRenderer(m_pWindow, -1 , 0 );
@@ -20,17 +21,15 @@ bool Game::init(const char* title, int xpos, int ypos,
 		{
 
 		}
-		//SDL_Surface* pTempSurface = SDL_LoadBMP("../Assets/animate.bmp");
+
 		if(!TheTextureManager::Instance()->load("../Assets/animate.png",
 			"animate", m_pRenderer))
 		{
 			return false;
 		}
+		
 		m_go.load(100, 100, 128, 82, "animate");
 		m_player.load(300, 300, 128, 82, "animate");
-		//m_pTexture = SDL_CreateTextureFromSurface(m_pRenderer, pTempSurface);
-
-		//SDL_FreeSurface(pTempSurface);
 
 		m_sourceRectangle.w = 128;
 		m_sourceRectangle.h = 82;
@@ -39,10 +38,7 @@ bool Game::init(const char* title, int xpos, int ypos,
 		m_destinationRectangle.y = m_sourceRectangle.y = 0;
 		m_destinationRectangle.w = m_sourceRectangle.w;
 		m_destinationRectangle.h = m_sourceRectangle.h;
-		/*
 
-		SDL_QueryTexture(m_pTexture, NULL, NULL, 
-		&m_sourceRectangle.w, &m_sourceRectangle.h);*/
 
 	}
 	else
@@ -55,19 +51,30 @@ bool Game::init(const char* title, int xpos, int ypos,
 
 void Game::render()
 {
-	SDL_RenderClear(m_pRenderer); // draw colour·Î Áö¿ò
-	m_go.draw(m_pRenderer);
-	m_player.draw(m_pRenderer);
+	SDL_RenderClear(m_pRenderer); // clear to the draw colour
+	for(std::vector<GameObject*>::size_type i = 0; 
+		i != m_gameObjects.size(); i++)
+	{
+		m_gameObjects[i]->draw(m_pRenderer);
+	}
 	SDL_RenderPresent(m_pRenderer); // draw to the screen
 }
-
 void Game::update()
 {
-	m_go.update();
-	m_player.update();
+	for(std::vector<GameObject*>::size_type i = 0; 
+		i != m_gameObjects.size(); i++)
+	{
+		m_gameObjects[i]->update();
+	}
 }
 void Game::clean()
 {
+	for(std::vector<GameObject*>::size_type i = 0;
+	i != m_gameObjects.size(); i++)
+	{
+		delete m_gameObjects[i];
+		m_gameObjects[i] = nullptr;
+	}
 	std::cout << "cleaning game\n";
 	SDL_DestroyWindow(m_pWindow);
 	SDL_DestroyRenderer(m_pRenderer);
@@ -113,7 +120,7 @@ bool Game::CheckBound(int x, int y, int width, int height)
 	{
 		return true;
 	}
-	
+
 	return false;
 }
 

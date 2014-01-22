@@ -44,3 +44,7 @@ void GameObject::update()
 	else if(m_x > 0)
 		m_x -= 1;*/
 }
+
+void GameObject::clean()
+{
+}

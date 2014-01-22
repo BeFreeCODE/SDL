@@ -8,12 +8,14 @@ class GameObject
 public:
 	GameObject();
 	~GameObject();
-	void load(int x, int y, int width, int height, 
-                        std::string textureID);
-	void draw(SDL_Renderer* pRenderer);
-	void update();
-	void clean();
+	 void load(int x, int y, int width, int height, 
+                 std::string textureID);
+	 void draw(SDL_Renderer* pRenderer);
+	 void update();
+	 void clean();
 protected:
+
+
 	std::string m_textureID;
 	int m_currentFrame;
 	int m_currentRow;
