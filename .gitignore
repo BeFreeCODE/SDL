@@ -1,2 +1,9 @@
 *.sdf
 *.opensdf
+*.tlog
+*.idb
+*.pdb
+*.obj
+*.exe
+*.ilk
+/ipch
