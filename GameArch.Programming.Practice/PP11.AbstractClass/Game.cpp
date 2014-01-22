@@ -1,11 +1,14 @@
 #include "Game.h"
 #include <iostream>
-#include "TextureManager.h"
+#include "Player.h"
 #include "Enemy.h"
+#include "TextureManager.h"
+#include "LoaderParams.h"
 
 Game* Game::m_pGame = 0;
+
 bool Game::init(const char* title, int xpos, int ypos, 
-	int width, int height, bool fullscreen)
+				int width, int height, bool fullscreen)
 {
 	// 각자 추가해 볼 것 
 	if(SDL_Init(SDL_INIT_EVERYTHING) >= 0)
@@ -28,29 +31,8 @@ bool Game::init(const char* title, int xpos, int ypos,
 			return false;
 		}
 
-		m_go = new GameObject;
-		m_player = new Player;
-		m_enemy = new Enemy;
-
-		m_go->load(100, 100, 128, 82, "animate");
-		m_player->load(300, 300, 128, 82, "animate");
-		m_enemy->load(0, 0, 128, 82, "animate");
-
-		m_gameObjects.push_back(m_go);
-		m_gameObjects.push_back(m_player);
-		m_gameObjects.push_back(m_enemy);
-
-		m_sourceRectangle.w = 128;
-		m_sourceRectangle.h = 82;
-
-		m_destinationRectangle.x = m_sourceRectangle.x = 0;
-		m_destinationRectangle.y = m_sourceRectangle.y = 0;
-		m_destinationRectangle.w = m_sourceRectangle.w;
-		m_destinationRectangle.h = m_sourceRectangle.h;
-		/*
-
-		SDL_QueryTexture(m_pTexture, NULL, NULL, 
-		&m_sourceRectangle.w, &m_sourceRectangle.h);*/
+		m_gameObjects.push_back(new Player(new LoaderParams(100, 100, 128, 82, "animate")));
+		m_gameObjects.push_back(new Enemy(new LoaderParams(300, 300, 128, 82, "animate")));
 
 	}
 	else
@@ -67,7 +49,7 @@ void Game::render()
 	for(std::vector<GameObject*>::size_type i = 0; 
 		i != m_gameObjects.size(); i++)
 	{
-		m_gameObjects[i]->draw(m_pRenderer);
+		m_gameObjects[i]->draw();
 	}
 	SDL_RenderPresent(m_pRenderer); // draw to the screen
 }
@@ -81,12 +63,12 @@ void Game::update()
 }
 void Game::clean()
 {
-	for(std::vector<GameObject*>::size_type i = 0;
-		i != m_gameObjects.size(); i++)
-	{
-		delete m_gameObjects[i];
-		m_gameObjects[i] = nullptr;
-	}
+	//for(std::vector<GameObject*>::size_type i = 0;
+	//	i != m_gameObjects.size(); i++)
+	//{
+	//	delete m_gameObjects[i];
+	//	m_gameObjects[i] = nullptr;
+	//}
 	std::cout << "cleaning game\n";
 	SDL_DestroyWindow(m_pWindow);
 	SDL_DestroyRenderer(m_pRenderer);
