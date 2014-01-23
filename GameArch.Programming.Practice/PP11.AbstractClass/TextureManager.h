@@ -3,8 +3,6 @@
 #include <map>
 #include <string>
 
-
-
 class TextureManager
 {
 public:

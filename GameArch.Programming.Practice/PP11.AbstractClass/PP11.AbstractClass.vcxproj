@@ -31,7 +31,7 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="PropertySheetMyHome.props" />
+    <Import Project="..\PropertySheet.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -68,6 +68,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="SDLGameObject.h" />
     <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="Vector2D.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Enemy.cpp" />
