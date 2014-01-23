@@ -1,5 +1,5 @@
 #include "Player.h"
-
+#include "InputHandler.h"
 #define ACCEL 0.1f
 Player::Player(const LoaderParams* pParams) : SDLGameObject(pParams)
 {
@@ -17,8 +17,11 @@ void Player::draw()
 
 void Player::update()
 {	
+	m_velocity.setX(0);
+	m_velocity.setY(0);
+	handleInput();
 	m_currentFrame = int((SDL_GetTicks() / 100) % 6);
-	m_acceleration.setX(ACCEL);
+	//m_acceleration.setX(ACCEL);
 
 	SDLGameObject::update();
 //	bool IsBound = false;// = GlobalGame::Instance()->CheckBound(m_x,m_y,m_width,m_height);
@@ -39,4 +42,24 @@ void Player::update()
 void Player::clean()
 {
 
+}
+
+void Player::handleInput()
+{
+	if(TheInputHandler::getInstance()->isKeyDown(SDL_SCANCODE_RIGHT))
+	{
+		m_velocity.setX(2);
+	}
+	if(TheInputHandler::getInstance()->isKeyDown(SDL_SCANCODE_LEFT))
+	{
+		m_velocity.setX(-2);
+	}
+	if(TheInputHandler::getInstance()->isKeyDown(SDL_SCANCODE_UP))
+	{
+		m_velocity.setY(-2);
+	}
+	if(TheInputHandler::getInstance()->isKeyDown(SDL_SCANCODE_DOWN))
+	{
+		m_velocity.setY(2);
+	}
 }

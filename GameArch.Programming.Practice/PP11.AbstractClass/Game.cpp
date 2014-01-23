@@ -4,7 +4,7 @@
 #include "Enemy.h"
 #include "TextureManager.h"
 #include "LoaderParams.h"
-
+#include "InputHandler.h"
 Game* Game::m_pGame = 0;
 
 bool Game::init(const char* title, int xpos, int ypos, 
@@ -70,28 +70,18 @@ void Game::clean()
 	//	m_gameObjects[i] = nullptr;
 	//}
 	std::cout << "cleaning game\n";
+	TheInputHandler::getInstance()->clean();
 	SDL_DestroyWindow(m_pWindow);
 	SDL_DestroyRenderer(m_pRenderer);
 	SDL_Quit();
 }
+void Game::quit()
+{
+	m_bRunning = false;
+}
 void Game::handleEvents()
 {
-	SDL_Event event;
-	if(SDL_PollEvent(&event))
-	{
-		switch (event.type)
-		{
-		case SDL_KEYDOWN:
-			{
-				m_bRunning = false;
-			}break;
-		case SDL_QUIT:
-			m_bRunning = false;
-			break;
-		default:
-			break; 
-		}
-	} 
+	TheInputHandler::getInstance()->update();
 }
 bool Game::CheckBound(int x, int y, int width, int height)
 {

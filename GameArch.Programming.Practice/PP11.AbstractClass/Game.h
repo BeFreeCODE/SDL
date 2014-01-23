@@ -28,6 +28,7 @@ public:
 	void update();
 	void handleEvents();
 	void clean();
+	void quit();
 	bool running();
 	bool CheckBound(int x, int y, int width, int height);
 
