@@ -1,5 +1,6 @@
 #include "Enemy.h"
-
+#include "InputHandler.h"
+#include <iostream>
 
 Enemy::Enemy(const LoaderParams* pParams) : SDLGameObject(pParams)
 {
@@ -15,11 +16,28 @@ void Enemy::draw()
 }
 void Enemy::update()
 {
-	m_position.setX(m_position.getX() + 1);
-	m_position.setY(m_position.getY() + 1);
+	handleInput();
 	m_currentFrame = int(((SDL_GetTicks() / 100) % 6));
+
+	
+
+	SDLGameObject::update();
 }
 void Enemy::clean()
 {
+
 }
 
+void Enemy::handleInput()
+{
+	if(TheInputHandler::getInstance()->getMouseButtonState(LEFT))
+	{
+		//마우스 키 다운 시 목적지 설정
+		m_acceleration = *TheInputHandler::getInstance()->getMousePosition();
+		//std::cout<<a->getX()<<" "<<target->getY()<<std::endl;
+		m_velocity = (m_acceleration-m_position) / 1000;
+	}
+
+	//내 위치에서 목적지 까지 뺀 곳을 normalize 하고 velocity 만큼 프레임마다 이동
+	
+}

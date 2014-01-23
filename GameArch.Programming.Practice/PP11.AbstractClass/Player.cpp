@@ -62,4 +62,5 @@ void Player::handleInput()
 	{
 		m_velocity.setY(2);
 	}
+
 }
