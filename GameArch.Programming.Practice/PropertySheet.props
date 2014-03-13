@@ -3,8 +3,8 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <IncludePath>C:\Users\532-1\SDL\GameArch.Programming.Practice\SDL2-2.0.1\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\532-1\SDL\GameArch.Programming.Practice\SDL2-2.0.1\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\329-1\Desktop\SDL\SDL\GameArch.Programming.Practice\SDL2-2.0.1\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\329-1\Desktop\SDL\SDL\GameArch.Programming.Practice\SDL2-2.0.1\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <Link>

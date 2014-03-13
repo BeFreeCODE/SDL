@@ -5,6 +5,8 @@
 #include "TextureManager.h"
 #include "LoaderParams.h"
 #include "InputHandler.h"
+#include "MenuState.h"
+#include "PlayState.h"
 Game* Game::m_pGame = 0;
 
 bool Game::init(const char* title, int xpos, int ypos, 
@@ -34,6 +36,9 @@ bool Game::init(const char* title, int xpos, int ypos,
 		m_gameObjects.push_back(new Player(new LoaderParams(100, 100, 128, 82, "animate")));
 		m_gameObjects.push_back(new Enemy(new LoaderParams(300, 300, 128, 82, "animate")));
 
+		m_pGameStateMachine = new GameStateMachine();
+		m_pGameStateMachine->changeState(new MenuState());
+
 	}
 	else
 	{
@@ -46,20 +51,12 @@ bool Game::init(const char* title, int xpos, int ypos,
 void Game::render()
 {
 	SDL_RenderClear(m_pRenderer); // clear to the draw colour
-	for(std::vector<GameObject*>::size_type i = 0; 
-		i != m_gameObjects.size(); i++)
-	{
-		m_gameObjects[i]->draw();
-	}
+	m_pGameStateMachine->render();
 	SDL_RenderPresent(m_pRenderer); // draw to the screen
 }
 void Game::update()
 {
-	for(std::vector<GameObject*>::size_type i = 0; 
-		i != m_gameObjects.size(); i++)
-	{
-		m_gameObjects[i]->update();
-	}
+	m_pGameStateMachine->update();
 }
 void Game::clean()
 {
@@ -82,6 +79,10 @@ void Game::quit()
 void Game::handleEvents()
 {
 	TheInputHandler::getInstance()->update();
+	if(TheInputHandler::getInstance()->isKeyDown(SDL_SCANCODE_RETURN))
+	{
+		m_pGameStateMachine->changeState(new PlayState());
+	}
 }
 bool Game::CheckBound(int x, int y, int width, int height)
 {

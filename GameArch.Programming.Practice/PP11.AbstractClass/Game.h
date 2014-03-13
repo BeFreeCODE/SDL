@@ -1,7 +1,7 @@
 #pragma once
 #include "SDL.h"
 #include <vector>
-
+#include "GameStateMachine.h"
 
 class Game;
 class GameObject;
@@ -44,5 +44,6 @@ private:
 	int m_currentFrame;
 
 	std::vector<GameObject*> m_gameObjects;
+	GameStateMachine* m_pGameStateMachine;
 
 };
