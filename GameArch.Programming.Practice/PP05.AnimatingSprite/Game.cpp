@@ -47,8 +47,13 @@ bool Game::init(const char* title, int xpos, int ypos,
 void Game::render()
 {
 	// clear the renderer to the draw color
+	SDL_Point point;
+	point.x = 0;
+	point.y = 0;
+
 	SDL_RenderClear(m_pRenderer);
-	SDL_RenderCopy(m_pRenderer,  m_pTexture,&m_sourceRectangle, &m_destinationRectangle);
+	SDL_RenderCopyEx(m_pRenderer, m_pTexture,&m_sourceRectangle,&m_destinationRectangle,0,&point,SDL_RendererFlip::SDL_FLIP_HORIZONTAL);
+	
 	SDL_RenderPresent(m_pRenderer); // draw to the screen
 
 }
