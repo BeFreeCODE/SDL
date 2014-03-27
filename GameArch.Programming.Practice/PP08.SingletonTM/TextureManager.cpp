@@ -22,11 +22,11 @@ bool TextureManager::load(std::string fileName, std::string   id,
 	if(pTempSurface == 0) {
 		return false;
 	}
-
+	
 	SDL_Texture* pTexture =
 		SDL_CreateTextureFromSurface(pRenderer, pTempSurface);
 	SDL_FreeSurface(pTempSurface);
-
+	
 	if(pTexture != 0) {
 		m_textureMap[id] = pTexture;
 		return true;
