@@ -3,7 +3,7 @@
 #include <map>
 #include <string>
 
-
+#include "Sprite.h"
 
 class TextureManager
 {
@@ -21,18 +21,18 @@ public:
 	}
 
 	~TextureManager(void);
-	std::map<std::string, SDL_Texture*> m_textureMap;
+	std::map<std::string, Sprite> m_textureMap;
 
 	bool load(std::string fileName, std::string id, 
 		SDL_Renderer* pRenderer);
 
-	void draw(std::string id, int x, int y, int width, int height, 
-		SDL_Renderer* pRenderer, 
+	void draw(SDL_Renderer* pRenderer, std::string id, int x, int y, int width, int height, 
+		
 		SDL_RendererFlip flip = SDL_FLIP_NONE);
 
-	void drawFrame(std::string id, int x, int y, int width, int height, 
+	void drawFrame(SDL_Renderer* pRenderer,std::string id, int x, int y, int width, int height, 
 		int currentRow, int currentFrame, 
-		SDL_Renderer* pRenderer, 
+		 
 		SDL_RendererFlip flip = SDL_FLIP_NONE);
 private:
 	TextureManager(void);

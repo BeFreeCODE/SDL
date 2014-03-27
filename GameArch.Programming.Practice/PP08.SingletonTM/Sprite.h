@@ -8,9 +8,10 @@ public:
 	virtual ~Sprite(void);
 
 	SDL_Rect getRect();
-private:
+public:
 	std::string m_id;
 	int m_currentFrame;
+	SDL_Texture* m_pTexture;
 	SDL_Rect m_rect;
 };
 

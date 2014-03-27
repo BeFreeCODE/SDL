@@ -59,12 +59,11 @@ void Game::render()
 {
 	// clear the renderer to the draw color
 	SDL_RenderClear(m_pRenderer);
-	TheTextureManager::Instance()->draw("jungle",0,0,1600,622,m_pRenderer);
-	TheTextureManager::Instance()->draw("animate", 0,0, 128, 82,  
-		m_pRenderer);
+	TheTextureManager::Instance()->draw(m_pRenderer,"jungle",400,300,1600,622);
+	TheTextureManager::Instance()->draw(m_pRenderer,"animate", 0,0, 128, 82);
 
-	TheTextureManager::Instance()->drawFrame("animate", 100,100, 
-		128, 82, 1,   m_currentFrame, m_pRenderer);
+	TheTextureManager::Instance()->drawFrame(m_pRenderer,"animate", 100,100, 
+		128, 82, 1,   m_currentFrame);
 
 	
 	SDL_RenderPresent(m_pRenderer);
