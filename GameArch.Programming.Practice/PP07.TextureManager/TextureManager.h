@@ -9,19 +9,8 @@ class TextureManager
 {
 public:
 
-	static TextureManager* s_pInstance;
-	static TextureManager* Instance()
-	{
-		if(s_pInstance == 0)
-		{
-			s_pInstance = new TextureManager();
-			return s_pInstance;
-		}
-		return s_pInstance;
-	}
-
+	TextureManager(void);
 	~TextureManager(void);
-	std::map<std::string, SDL_Texture*> m_textureMap;
 
 	bool load(std::string fileName, std::string id, 
 		SDL_Renderer* pRenderer);
@@ -35,9 +24,5 @@ public:
 		SDL_Renderer* pRenderer, 
 		SDL_RendererFlip flip = SDL_FLIP_NONE);
 private:
-	TextureManager(void);
-
-
+	std::map<std::string, SDL_Texture*> m_textureMap;
 };
-
-typedef TextureManager TheTextureManager;
