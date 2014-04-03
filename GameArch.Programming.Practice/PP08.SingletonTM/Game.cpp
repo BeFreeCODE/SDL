@@ -19,33 +19,16 @@ bool Game::init(const char* title, int xpos, int ypos,
 		{
 
 		}
-		//SDL_Surface* pTempSurface = SDL_LoadBMP("../Assets/animate.bmp");
-		if(!TheTextureManager::Instance()->load("../Assets/animate-alpha.png",
+		if(!GlobalTextureManager::Instance()->load("../Assets/animate-alpha.png",
 			"animate", m_pRenderer))
 		{
 			return false;
 		}
 
-		if(!TheTextureManager::Instance()->load("../Assets/jungle.png","jungle",m_pRenderer))
+		if(!GlobalTextureManager::Instance()->load("../Assets/jungle.png","jungle",m_pRenderer))
 		{
 			return false;
 		}
-		//m_pTexture = SDL_CreateTextureFromSurface(m_pRenderer, pTempSurface);
-
-		//SDL_FreeSurface(pTempSurface);
-
-		m_sourceRectangle.w = 128;
-		m_sourceRectangle.h = 82;
-
-		m_destinationRectangle.x = m_sourceRectangle.x = 0;
-		m_destinationRectangle.y = m_sourceRectangle.y = 0;
-		m_destinationRectangle.w = m_sourceRectangle.w;
-		m_destinationRectangle.h = m_sourceRectangle.h;
-		/*
-
-		SDL_QueryTexture(m_pTexture, NULL, NULL, 
-		&m_sourceRectangle.w, &m_sourceRectangle.h);*/
-
 	}
 	else
 	{
@@ -59,10 +42,10 @@ void Game::render()
 {
 	// clear the renderer to the draw color
 	SDL_RenderClear(m_pRenderer);
-	TheTextureManager::Instance()->draw(m_pRenderer,"jungle",400,300,1600,622);
-	TheTextureManager::Instance()->draw(m_pRenderer,"animate", 0,0, 128, 82);
+	GlobalTextureManager::Instance()->draw(m_pRenderer,"jungle",400,300,1600,622);
+	GlobalTextureManager::Instance()->draw(m_pRenderer,"animate", 0,0, 128, 82);
 
-	TheTextureManager::Instance()->drawFrame(m_pRenderer,"animate", 100,100, 
+	GlobalTextureManager::Instance()->drawFrame(m_pRenderer,"animate", 100,100, 
 		128, 82, 1,   m_currentFrame);
 
 	

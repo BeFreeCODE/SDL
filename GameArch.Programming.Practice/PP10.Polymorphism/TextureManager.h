@@ -38,4 +38,4 @@ private:
 
 };
 
-typedef TextureManager TheTextureManager;
+typedef TextureManager GlobalTextureManager;

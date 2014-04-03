@@ -7,9 +7,9 @@
 
 class TextureManager
 {
-public:
-
+private:
 	static TextureManager* s_pInstance;
+public:
 	static TextureManager* Instance()
 	{
 		if(s_pInstance == 0)
@@ -27,17 +27,16 @@ public:
 		SDL_Renderer* pRenderer);
 
 	void draw(SDL_Renderer* pRenderer, std::string id, int x, int y, int width, int height, 
-		
 		SDL_RendererFlip flip = SDL_FLIP_NONE);
 
 	void drawFrame(SDL_Renderer* pRenderer,std::string id, int x, int y, int width, int height, 
 		int currentRow, int currentFrame, 
-		 
 		SDL_RendererFlip flip = SDL_FLIP_NONE);
+
 private:
 	TextureManager(void);
 
 
 };
 
-typedef TextureManager TheTextureManager;
+typedef TextureManager GlobalTextureManager;

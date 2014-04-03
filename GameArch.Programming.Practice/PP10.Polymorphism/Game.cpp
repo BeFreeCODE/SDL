@@ -22,7 +22,7 @@ bool Game::init(const char* title, int xpos, int ypos,
 
 		}
 
-		if(!TheTextureManager::Instance()->load("../Assets/animate.png",
+		if(!GlobalTextureManager::Instance()->load("../Assets/animate.png",
 			"animate", m_pRenderer))
 		{
 			return false;

@@ -1,6 +1,7 @@
 #pragma once
 #include "SDL.h"
 #include "Player.h"
+#include "BackGround.h"
 
 class Game;
 typedef Game GlobalGame;
@@ -35,10 +36,7 @@ private:
 	bool m_bRunning;
 	int m_currentFrame;
 
-	SDL_Texture* m_pTexture; // the new SDL_Texture variable
-	SDL_Rect m_sourceRectangle; // 원본 사각형 
-	SDL_Rect m_destinationRectangle; // 대상 사각형 
-
+	BackGround m_bg;
 	GameObject m_go;
 	Player m_player;
 };

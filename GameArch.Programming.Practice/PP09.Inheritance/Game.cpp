@@ -20,30 +20,19 @@ bool Game::init(const char* title, int xpos, int ypos,
 		{
 
 		}
-		//SDL_Surface* pTempSurface = SDL_LoadBMP("../Assets/animate.bmp");
-		if(!TheTextureManager::Instance()->load("../Assets/animate.png",
+
+		if(!GlobalTextureManager::Instance()->load("../Assets/animate-alpha.png",
 			"animate", m_pRenderer))
 		{
 			return false;
 		}
+		if(!GlobalTextureManager::Instance()->load("../Assets/jungle.png","jungle",m_pRenderer))
+		{
+			return false;
+		}
+		m_bg.load(0,0,1600,622,"jungle");
 		m_go.load(100, 100, 128, 82, "animate");
 		m_player.load(300, 300, 128, 82, "animate");
-		//m_pTexture = SDL_CreateTextureFromSurface(m_pRenderer, pTempSurface);
-
-		//SDL_FreeSurface(pTempSurface);
-
-		m_sourceRectangle.w = 128;
-		m_sourceRectangle.h = 82;
-
-		m_destinationRectangle.x = m_sourceRectangle.x = 0;
-		m_destinationRectangle.y = m_sourceRectangle.y = 0;
-		m_destinationRectangle.w = m_sourceRectangle.w;
-		m_destinationRectangle.h = m_sourceRectangle.h;
-		/*
-
-		SDL_QueryTexture(m_pTexture, NULL, NULL, 
-		&m_sourceRectangle.w, &m_sourceRectangle.h);*/
-
 	}
 	else
 	{
@@ -56,6 +45,7 @@ bool Game::init(const char* title, int xpos, int ypos,
 void Game::render()
 {
 	SDL_RenderClear(m_pRenderer); // draw colour·Î Áö¿ò
+	m_bg.draw(m_pRenderer);
 	m_go.draw(m_pRenderer);
 	m_player.draw(m_pRenderer);
 	SDL_RenderPresent(m_pRenderer); // draw to the screen
@@ -63,6 +53,7 @@ void Game::render()
 
 void Game::update()
 {
+	m_bg.update();
 	m_go.update();
 	m_player.update();
 }

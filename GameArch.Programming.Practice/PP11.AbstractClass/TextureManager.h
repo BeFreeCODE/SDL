@@ -4,11 +4,12 @@
 #include <string>
 
 
-
 class TextureManager
 {
-public:
+private:
 	static TextureManager* s_pInstance;
+public:
+	
 	static TextureManager* Instance()
 	{
 		if(s_pInstance == 0)
@@ -38,4 +39,4 @@ private:
 
 };
 
-typedef TextureManager TheTextureManager;
+typedef TextureManager GlobalTextureManager;

@@ -3,12 +3,11 @@
 #include <map>
 #include <string>
 
-
-
 class TextureManager
 {
-public:
+private:
 	static TextureManager* s_pInstance;
+public:
 	static TextureManager* Instance()
 	{
 		if(s_pInstance == 0)
@@ -34,8 +33,6 @@ public:
 		SDL_RendererFlip flip = SDL_FLIP_NONE);
 private:
 	TextureManager(void);
-
-
 };
 
-typedef TextureManager TheTextureManager;
+typedef TextureManager GlobalTextureManager;

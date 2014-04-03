@@ -5,7 +5,7 @@ Game* g_game = 0; // our Game object
 int main(int argc, char* argv[])
 {
 	Game* instance = GlobalGame::Instance();
-	instance->init("Chapter 8", 100, 100, 640, 480, false);
+	instance->init("Chapter 9", 100, 100, 640, 480, false);
 
 	while(instance->running())
 	{

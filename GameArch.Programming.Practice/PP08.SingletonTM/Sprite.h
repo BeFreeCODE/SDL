@@ -1,4 +1,10 @@
+///
+/// created by GiHeon Han
+///
+/// 2014.04.03
+///
 #pragma once
+
 #include <SDL.h>
 #include <string>
 class Sprite
