@@ -12,6 +12,7 @@ public:
 	virtual void update();
 	virtual void clean();
 
+	Vector2D getPosition() { return m_position; }
 protected:
 	SDLGameObject(const LoaderParams* pParams);
 	~SDLGameObject(void);

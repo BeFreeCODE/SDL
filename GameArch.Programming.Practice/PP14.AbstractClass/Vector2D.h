@@ -57,6 +57,11 @@ public:
 		return *this;
 	}
 
+	bool operator== (Vector2D rhs)
+	{
+		return m_x == rhs.m_x && m_y == rhs.m_y;
+	}
+
 	float length() {return sqrt(m_x * m_y + m_y* m_y); }
 
 	void normalize()
@@ -68,6 +73,7 @@ public:
 			(*this) *= 1/ l;
 		}
 	}
+
 private:
 	float m_x;
 	float m_y;

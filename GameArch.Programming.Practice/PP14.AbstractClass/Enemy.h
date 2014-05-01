@@ -1,6 +1,6 @@
 #pragma once
 #include "SDLGameObject.h"
-
+#include "MoveEvent.h"
 class Enemy : public SDLGameObject
 {
 public:
@@ -11,5 +11,7 @@ public:
 	void draw();
 	void update();
 	void clean();
+
+	MoveEvent m_moveEvent;
 };
 
